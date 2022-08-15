@@ -1,6 +1,6 @@
 package com.example.welderbase.model;
 
-public class Welder extends Human{
+public class Welder extends BaseEntity{
 
     private String naksStamp;
 

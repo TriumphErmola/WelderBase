@@ -1,12 +1,20 @@
 package com.example.welderbase.model;
 
-public class Human {
+import java.io.Serializable;
 
+public class BaseEntity implements Serializable {
+
+    private Long id;
     private String firstName;
     private String secondName;
     private int age;
 
-    public Human() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {

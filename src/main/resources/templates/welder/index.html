@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'welder')}">
+<head>
+    <meta charset="UTF-8">
+    <title>Welder List</title>
+</head>
+<body>
+
+<h2 th:text="'Welder List'">Welder List</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>naksStamp</th>
+        <th>welderRank</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th: th:each="welder : ${welders}">
+        <td th: th:text="${welder?.id}">1</td>
+        <td th: th:text="${welder?.firstName}">Andrey</td>
+        <td th: th:text="${welder?.lastName}">Ermolenko</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
