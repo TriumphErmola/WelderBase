@@ -1,62 +1,43 @@
 package com.example.welderbase.model;
 
-public class Welder extends BaseEntity{
+public class Welder extends Employee{
 
-    private String naksStamp;
+    private String naks;
+    private Specialties spec;
 
-    private int welderRank;
-
-    private boolean HM;
-
-    private boolean Nerj;
-
-    public Welder(String naksStamp, int welderRank, boolean HM, boolean nerj) {
-        super();
-        this.naksStamp = naksStamp;
-        this.welderRank = welderRank;
-        this.HM = HM;
-        Nerj = nerj;
+    public Welder() {
     }
 
-    public String getNaksStamp() {
-        return naksStamp;
+    public Welder(String firstName, String lastName, String patronymic, String phoneNumber, Double lengthOfService, int age, String specialties, Specialties spec, String naks, Specialties spec1) {
+        super(firstName, lastName, patronymic, phoneNumber, lengthOfService, age, specialties, spec);
+        this.naks = naks;
+        this.spec = spec1;
     }
 
-    public void setNaksStamp(String naksStamp) {
-        this.naksStamp = naksStamp;
+
+    public String getNaks() {
+        return naks;
     }
 
-    public int getWelderRank() {
-        return welderRank;
+    @Override
+    public Specialties getSpec() {
+        return spec;
     }
 
-    public void setWelderRank(int welderRank) {
-        this.welderRank = welderRank;
+    public void setNaks(String naks) {
+        this.naks = naks;
     }
 
-    public boolean isHM() {
-        return HM;
-    }
-
-    public void setHM(boolean HM) {
-        this.HM = HM;
-    }
-
-    public boolean isNerj() {
-        return Nerj;
-    }
-
-    public void setNerj(boolean nerj) {
-        Nerj = nerj;
+    @Override
+    public void setSpec(Specialties spec) {
+        this.spec = spec;
     }
 
     @Override
     public String toString() {
         return "Welder{" +
-                "naksStamp='" + naksStamp + '\'' +
-                ", welderRank=" + welderRank +
-                ", HM=" + HM +
-                ", Nerj=" + Nerj +
+                "naks='" + naks + '\'' +
+                ", spec=" + spec +
                 '}';
     }
 }
