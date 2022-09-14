@@ -3,6 +3,7 @@ package com.example.welderbase.springdatajpa;
 import com.example.welderbase.model.Welder;
 import com.example.welderbase.repository.WelderRepository;
 import com.example.welderbase.service.WelderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ public class WelderSDJpaService implements WelderService {
 
     private final WelderRepository welderRepository;
 
+    @Autowired
     public WelderSDJpaService(WelderRepository welderRepository) {
         this.welderRepository = welderRepository;
     }
