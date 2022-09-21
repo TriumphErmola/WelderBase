@@ -17,12 +17,11 @@ public class WelderJoints {
     @ManyToMany
     @JoinTable(name = "welder_joints",joinColumns = @JoinColumn(name = "joint_id"),
     inverseJoinColumns = @JoinColumn("welder_id"))
-    private Set<Welder> welders;
+    private Set<Welder> welders = new HashSet<>();
 
-    public WelderJoints(String steelGrade, int diametr, Set<Welder> welders) {
+    public WelderJoints(String steelGrade, int diametr) {
         this.steelGrade = steelGrade;
         this.diametr = diametr;
-        this.welders = new HashSet<>();
     }
 
     public WelderJoints() {

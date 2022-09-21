@@ -13,13 +13,13 @@ public class Welder {
 
     private String firstName;
     private String lastName;
-    @ManyToMany(mappedBy = "welders")
-    private Set<WelderJoints> welderJointsSet;
 
-    public Welder(String firstName, String lastName, Set<WelderJoints> welderJointsSet) {
+    @ManyToMany(mappedBy = "welders")
+    private Set<WelderJoints> welderJointsSet = new HashSet<>();
+
+    public Welder(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.welderJointsSet = new HashSet<>();
     }
 
     public Welder() {
