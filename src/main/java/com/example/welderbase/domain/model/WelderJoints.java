@@ -15,8 +15,8 @@ public class WelderJoints {
     private int diametr;
 
     @ManyToMany
-    @JoinTable(name = "welder_joints",joinColumns = @JoinColumn(name = "joint_id"),
-    inverseJoinColumns = @JoinColumn("welder_id"))
+    @JoinTable(name = "welder_joint",joinColumns = @JoinColumn(name = "welder_joint_id"),
+    inverseJoinColumns = @JoinColumn(name = "welder_id"))
     private Set<Welder> welders = new HashSet<>();
 
     public WelderJoints(String steelGrade, int diametr) {
