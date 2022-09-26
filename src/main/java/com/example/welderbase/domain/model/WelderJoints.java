@@ -14,6 +14,9 @@ public class WelderJoints {
     private String steelGrade;
     private int diametr;
 
+    @ManyToOne
+    private WorkPlace workplace;
+
     @ManyToMany
     @JoinTable(name = "welder_joint",joinColumns = @JoinColumn(name = "welder_joint_id"),
     inverseJoinColumns = @JoinColumn(name = "welder_id"))
@@ -41,6 +44,14 @@ public class WelderJoints {
 
     public void setDiametr(int diametr) {
         this.diametr = diametr;
+    }
+
+    public WorkPlace getWorkplace() {
+        return workplace;
+    }
+
+    public void setWorkplace(WorkPlace workplace) {
+        this.workplace = workplace;
     }
 
     public Set<Welder> getWelders() {
