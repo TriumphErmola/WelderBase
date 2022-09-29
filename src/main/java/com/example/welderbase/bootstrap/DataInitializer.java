@@ -34,13 +34,15 @@ public class DataInitializer implements CommandLineRunner {
         welder1.getWelderJointsSet().add(welderJoints1);
         welderJoints1.getWelders().add(welder1);
 
+        welderRepository.save(welder1);
+        welderJointsRepository.save(welderJoints1);
+
         WorkPlace workPlace1 = new WorkPlace("Очистные сооружения");
 
         welderJoints1.setWorkplace(workPlace1);
         workPlace1.getJoints().add(welderJoints1);
 
-        welderRepository.save(welder1);
-        welderJointsRepository.save(welderJoints1);
+
         workPlaceRepository.save(workPlace1);
 
         Welder welder2 = new Welder("Manarbek", "Shahmanov");
@@ -49,13 +51,12 @@ public class DataInitializer implements CommandLineRunner {
         welder2.getWelderJointsSet().add(welderJoints2);
         welderJoints2.getWelders().add(welder2);
 
+        welderJoints2.setWorkplace(workPlace1);
+        workPlace1.getJoints().add(welderJoints2);
 
-//        welderJoints2.setWorkplace(workPlace1);
-//        workPlace1.getJoints().add(welderJoints2);
-
-//        welderRepository.save(welder2);
-//        welderJointsRepository.save(welderJoints2);
-//        workPlaceRepository.save(workPlace1);
+        welderRepository.save(welder2);
+        welderJointsRepository.save(welderJoints2);
+        workPlaceRepository.save(workPlace1);
 
         System.out.println("All Welders : " + welderRepository.count());
         System.out.println("All Joints : " + welderJointsRepository.count());
