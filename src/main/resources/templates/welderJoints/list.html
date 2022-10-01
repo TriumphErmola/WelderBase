@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Name1</title>
+</head>
+<body>
+<h1>Joint List</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>steelGrade</th>
+        <th>diametr</th>
+    </tr>
+    <tr th:each="welderJoints : ${welderJoint}">
+        <td th:text="${welderJoints.id}">1</td>
+        <td th:text="${welderJoints.steelGrade}">stal20</td>
+        <td th:text="${welderJoints.diametr}">214</td>
+    </tr>
+</table>
+</body>
+</html>
