@@ -1,13 +1,13 @@
-package com.example.welderbase.bootstrap;
+package bootstrap;
 
-import com.example.welderbase.domain.model.Welder;
-import com.example.welderbase.domain.model.WelderJoints;
-import com.example.welderbase.domain.model.WorkPlace;
-import com.example.welderbase.repository.WelderJointsRepository;
-import com.example.welderbase.repository.WelderRepository;
-import com.example.welderbase.repository.WorkPlaceRepository;
+import model.Welder;
+import model.WelderJoints;
+import model.WorkPlace;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import repository.WelderJointsRepository;
+import repository.WelderRepository;
+import repository.WorkPlaceRepository;
 
 @Component
 public class DataInitializer implements CommandLineRunner {

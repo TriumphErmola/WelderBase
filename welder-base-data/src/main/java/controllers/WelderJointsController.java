@@ -1,9 +1,8 @@
-package com.example.welderbase.controllers;
-
-import com.example.welderbase.repository.WelderJointsRepository;
+package controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import repository.WelderJointsRepository;
 
 @Controller
 public class WelderJointsController {

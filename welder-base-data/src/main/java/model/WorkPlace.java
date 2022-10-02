@@ -1,4 +1,4 @@
-package com.example.welderbase.domain.model;
+package model;
 
 import javax.persistence.*;
 import java.util.HashSet;
