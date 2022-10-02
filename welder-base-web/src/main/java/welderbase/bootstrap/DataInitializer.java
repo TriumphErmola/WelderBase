@@ -1,4 +1,5 @@
-package bootstrap;
+package welderbase.bootstrap;
+
 
 import model.Welder;
 import model.WelderJoints;
@@ -16,6 +17,7 @@ public class DataInitializer implements CommandLineRunner {
     private final WelderRepository welderRepository;
     private final WelderJointsRepository welderJointsRepository;
     private final WorkPlaceRepository workPlaceRepository;
+
 
     public DataInitializer(WelderRepository welderRepository, WelderJointsRepository welderJointsRepository, WorkPlaceRepository workPlaceRepository) {
         this.welderRepository = welderRepository;
