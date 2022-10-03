@@ -1,4 +1,4 @@
-package model;
+package welderbase.model;
 
 import javax.persistence.*;
 import java.util.HashSet;

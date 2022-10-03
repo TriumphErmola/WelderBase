@@ -1,8 +1,8 @@
-package repository;
+package welderbase.repository;
 
 
-import model.WelderJoints;
 import org.springframework.data.repository.CrudRepository;
+import welderbase.model.WelderJoints;
 
 public interface WelderJointsRepository extends CrudRepository<WelderJoints,Long> {
 }

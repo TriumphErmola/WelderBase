@@ -1,7 +1,7 @@
-package repository;
+package welderbase.repository;
 
-import model.WorkPlace;
 import org.springframework.data.repository.CrudRepository;
+import welderbase.model.WorkPlace;
 
 public interface WorkPlaceRepository extends CrudRepository<WorkPlace,Long> {
 }
