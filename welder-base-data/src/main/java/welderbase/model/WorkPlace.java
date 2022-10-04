@@ -1,15 +1,14 @@
 package welderbase.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class WorkPlace {
+public class WorkPlace extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 
     private String position;
 
@@ -46,21 +45,21 @@ public class WorkPlace {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        WorkPlace workplace = (WorkPlace) o;
+        WorkPlace workPlace = (WorkPlace) o;
 
-        return position != null ? position.equals(workplace.position) : workplace.position == null;
+        if (position != null ? !position.equals(workPlace.position) : workPlace.position != null) return false;
+        return joints != null ? joints.equals(workPlace.joints) : workPlace.joints == null;
     }
 
     @Override
     public int hashCode() {
-        return position != null ? position.hashCode() : 0;
+        return 0;
     }
 
     @Override
     public String toString() {
         return "WorkPlace{" +
-                "id=" + id +
-                ", position='" + position + '\'' +
+                "position='" + position + '\'' +
                 ", joints=" + joints +
                 '}';
     }

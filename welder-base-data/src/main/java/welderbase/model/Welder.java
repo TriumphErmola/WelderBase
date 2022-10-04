@@ -1,15 +1,12 @@
 package welderbase.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Welder {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Welder extends BaseEntity{
 
     private String firstName;
     private String lastName;
@@ -52,7 +49,6 @@ public class Welder {
     @Override
     public String toString() {
         return "Welder{" +
-                "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", welderJointsSet=" + welderJointsSet +
@@ -66,11 +62,13 @@ public class Welder {
 
         Welder welder = (Welder) o;
 
-        return id != null ? id.equals(welder.id) : welder.id == null;
+        if (firstName != null ? !firstName.equals(welder.firstName) : welder.firstName != null) return false;
+        if (lastName != null ? !lastName.equals(welder.lastName) : welder.lastName != null) return false;
+        return welderJointsSet != null ? welderJointsSet.equals(welder.welderJointsSet) : welder.welderJointsSet == null;
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        return 0;
     }
 }

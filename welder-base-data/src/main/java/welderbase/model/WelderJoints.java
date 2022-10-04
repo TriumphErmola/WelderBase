@@ -5,11 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class WelderJoints {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class WelderJoints extends BaseEntity {
 
     private String steelGrade;
     private int diametr;
@@ -63,27 +59,30 @@ public class WelderJoints {
     }
 
     @Override
-    public String toString() {
-        return "WelderJoints{" +
-                "id=" + id +
-                ", steelGrade='" + steelGrade + '\'' +
-                ", diametr=" + diametr +
-                ", welders=" + welders +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
         WelderJoints that = (WelderJoints) o;
 
-        return id != null ? id.equals(that.id) : that.id == null;
+        if (diametr != that.diametr) return false;
+        if (steelGrade != null ? !steelGrade.equals(that.steelGrade) : that.steelGrade != null) return false;
+        if (workplace != null ? !workplace.equals(that.workplace) : that.workplace != null) return false;
+        return welders != null ? welders.equals(that.welders) : that.welders == null;
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "WelderJoints{" +
+                "steelGrade='" + steelGrade + '\'' +
+                ", diametr=" + diametr +
+                ", workplace=" + workplace +
+                ", welders=" + welders +
+                '}';
     }
 }
