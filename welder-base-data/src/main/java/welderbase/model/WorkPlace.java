@@ -40,16 +40,7 @@ public class WorkPlace extends BaseEntity{
         this.joints = joints;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
-        WorkPlace workPlace = (WorkPlace) o;
-
-        if (position != null ? !position.equals(workPlace.position) : workPlace.position != null) return false;
-        return joints != null ? joints.equals(workPlace.joints) : workPlace.joints == null;
-    }
 
     @Override
     public int hashCode() {

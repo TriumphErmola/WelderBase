@@ -58,18 +58,7 @@ public class WelderJoints extends BaseEntity {
         this.welders = welders;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
-        WelderJoints that = (WelderJoints) o;
-
-        if (diametr != that.diametr) return false;
-        if (steelGrade != null ? !steelGrade.equals(that.steelGrade) : that.steelGrade != null) return false;
-        if (workplace != null ? !workplace.equals(that.workplace) : that.workplace != null) return false;
-        return welders != null ? welders.equals(that.welders) : that.welders == null;
-    }
 
     @Override
     public int hashCode() {
