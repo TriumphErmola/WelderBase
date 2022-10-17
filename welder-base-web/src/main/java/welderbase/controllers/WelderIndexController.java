@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WelderIndexController {
 
-    @RequestMapping({"/index","","/","index.hmtl"})
-    public String index() {
-        return "index";
+    @RequestMapping({"/indexwelder","","/","indexwelder.hmtl"})
+    public String indexWelder() {
+        return "indexWelder";
     }
 }

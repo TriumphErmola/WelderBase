@@ -1,10 +1,12 @@
 package welderbase.services.map;
 
+import org.springframework.stereotype.Service;
 import welderbase.model.Welder;
 import welderbase.services.CrudService;
 
 import java.util.Set;
 
+@Service
 public class WelderMapService extends AbstractMapService<Welder, Long> implements CrudService<Welder, Long> {
 
     @Override

@@ -63,5 +63,7 @@ public class DataInitializer implements CommandLineRunner {
         System.out.println("All Welders : " + welderRepository.count());
         System.out.println("All Joints : " + welderJointsRepository.count());
         System.out.println("All joints in place : " + workPlaceRepository.count());
+
     }
+
 }
