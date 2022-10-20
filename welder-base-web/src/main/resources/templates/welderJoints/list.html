@@ -5,14 +5,15 @@
     <title>Name1</title>
 </head>
 <body>
-<h1>Joint List</h1>
+<!--/*@thymesVar id="welder" type="welderbase.model.WelderJoints"*/-->
+<h1 th:text="'List of Joints'">Joints List</h1>
 <table>
     <tr>
         <th>Id</th>
         <th>steelGrade</th>
         <th>diametr</th>
     </tr>
-    <tr th:each="welderJoints : ${welderJoint}">
+    <tr th:each="welderJoints : ${welderJoints}">
         <td th:text="${welderJoints.id}">1</td>
         <td th:text="${welderJoints.steelGrade}">stal20</td>
         <td th:text="${welderJoints.diametr}">214</td>
