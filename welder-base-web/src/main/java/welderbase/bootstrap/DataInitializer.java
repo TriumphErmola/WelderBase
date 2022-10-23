@@ -34,14 +34,13 @@ public class DataInitializer implements CommandLineRunner {
         WelderJoints welderJoints1 = new WelderJoints("Stail20", 159);
 
         welder1.getWelderJointsSet().add(welderJoints1);
-        welderJoints1.getWelders().add(welder1);
 
         welderRepository.save(welder1);
         welderJointsRepository.save(welderJoints1);
 
         WorkPlace workPlace1 = new WorkPlace("Очистные сооружения");
 
-        welderJoints1.setWorkplace(workPlace1);
+
         workPlace1.getJoints().add(welderJoints1);
 
 
@@ -51,9 +50,7 @@ public class DataInitializer implements CommandLineRunner {
         WelderJoints welderJoints2 = new WelderJoints("Сhromium Marganese", 214);
 
         welder2.getWelderJointsSet().add(welderJoints2);
-        welderJoints2.getWelders().add(welder2);
 
-        welderJoints2.setWorkplace(workPlace1);
         workPlace1.getJoints().add(welderJoints2);
 
         welderRepository.save(welder2);

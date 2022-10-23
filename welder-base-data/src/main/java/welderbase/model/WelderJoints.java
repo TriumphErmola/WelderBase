@@ -1,22 +1,20 @@
 package welderbase.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+
 
 @Entity
+@Table(name = "welder_joints")
 public class WelderJoints extends BaseEntity {
 
+    @Column(name = "steel_grade")
     private String steelGrade;
+    @Column(name = "diametr")
     private int diametr;
 
     @ManyToOne
-    private WorkPlace workplace;
-
-    @ManyToMany
-    @JoinTable(name = "welder_joint",joinColumns = @JoinColumn(name = "welder_joint_id"),
-    inverseJoinColumns = @JoinColumn(name = "welder_id"))
-    private Set<Welder> welders = new HashSet<>();
+    @JoinColumn(name = "welder_id")
+    private Welder welder;
 
     public WelderJoints(String steelGrade, int diametr) {
         this.steelGrade = steelGrade;
@@ -42,27 +40,32 @@ public class WelderJoints extends BaseEntity {
         this.diametr = diametr;
     }
 
-    public WorkPlace getWorkplace() {
-        return workplace;
+    public Welder getWelder() {
+        return welder;
     }
 
-    public void setWorkplace(WorkPlace workplace) {
-        this.workplace = workplace;
+    public void setWelder(Welder welder) {
+        this.welder = welder;
     }
 
-    public Set<Welder> getWelders() {
-        return welders;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        WelderJoints that = (WelderJoints) o;
+
+        if (diametr != that.diametr) return false;
+        if (steelGrade != null ? !steelGrade.equals(that.steelGrade) : that.steelGrade != null) return false;
+        return welder != null ? welder.equals(that.welder) : that.welder == null;
     }
-
-    public void setWelders(Set<Welder> welders) {
-        this.welders = welders;
-    }
-
-
 
     @Override
     public int hashCode() {
-        return 0;
+        int result = steelGrade != null ? steelGrade.hashCode() : 0;
+        result = 31 * result + diametr;
+        result = 31 * result + (welder != null ? welder.hashCode() : 0);
+        return result;
     }
 
     @Override
@@ -70,8 +73,7 @@ public class WelderJoints extends BaseEntity {
         return "WelderJoints{" +
                 "steelGrade='" + steelGrade + '\'' +
                 ", diametr=" + diametr +
-                ", workplace=" + workplace +
-                ", welders=" + welders +
+                ", welder=" + welder +
                 '}';
     }
 }
