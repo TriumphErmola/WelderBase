@@ -17,10 +17,15 @@ public class Welder extends BaseEntity{
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "welder")
     private Set<WelderJoints> welderJointsSet = new HashSet<>();
 
+    @ManyToOne
+    private WorkPlace workPlace;
+
     public Welder(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+
 
     public Welder() {
     }
@@ -47,6 +52,14 @@ public class Welder extends BaseEntity{
 
     public void setWelderJointsSet(Set<WelderJoints> welderJointsSet) {
         this.welderJointsSet = welderJointsSet;
+    }
+
+    public WorkPlace getWorkPlace() {
+        return workPlace;
+    }
+
+    public void setWorkPlace(WorkPlace workPlace) {
+        this.workPlace = workPlace;
     }
 
     @Override

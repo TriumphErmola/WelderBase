@@ -2,6 +2,7 @@ package welderbase.model;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,6 +16,9 @@ public class WorkPlace extends BaseEntity{
     @OneToMany
     @JoinColumn(name = "workplace_id")
     private Set<WelderJoints> joints = new HashSet<>();
+
+    @ManyToOne
+    private Welder welder;
 
     public WorkPlace(String position) {
         this.position = position;
