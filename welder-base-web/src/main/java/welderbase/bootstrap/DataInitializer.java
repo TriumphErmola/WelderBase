@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 import welderbase.model.Welder;
 import welderbase.model.WelderJoints;
 import welderbase.model.WorkPlace;
-import welderbase.repository.WelderJointsRepository;
-import welderbase.repository.WelderRepository;
-import welderbase.repository.WorkPlaceRepository;
+import welderbase.repositories.WelderJointsRepository;
+import welderbase.repositories.WelderRepository;
+import welderbase.repositories.WorkPlaceRepository;
 
 @Component
 public class DataInitializer implements CommandLineRunner {

@@ -4,7 +4,7 @@ package welderbase.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import welderbase.repository.WelderRepository;
+import welderbase.repositories.WelderRepository;
 
 @Controller
 public class WelderIndexController {

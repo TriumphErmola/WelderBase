@@ -1,4 +1,4 @@
-package welderbase.repository;
+package welderbase.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 import welderbase.model.WorkPlace;
