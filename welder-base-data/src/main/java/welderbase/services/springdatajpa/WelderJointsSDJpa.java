@@ -11,6 +11,7 @@ import welderbase.services.CrudService;
 import java.util.HashSet;
 import java.util.Set;
 
+
 @Service
 @Profile("springdatajpa")
 public class WelderJointsSDJpa implements CrudService<WelderJoints, Long> {
